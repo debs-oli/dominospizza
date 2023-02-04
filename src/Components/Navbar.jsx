@@ -1,4 +1,4 @@
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <nav>
       <h1>
@@ -12,10 +12,26 @@ export default function Navbar() {
       </h1>
       <ul>
         <li>
-          <a href="/">Ecomenda Online</a>
+          <a
+            href="/"
+            onClick={(event) => {
+              event.preventDefault();
+              props.toggleProducts(false);
+            }}
+          >
+            Ecomenda Online
+          </a>
         </li>
         <li>
-          <a href="/">Menu</a>
+          <a
+            href="/"
+            onClick={(event) => {
+              event.preventDefault();
+              props.toggleProducts(true);
+            }}
+          >
+            Menu
+          </a>
         </li>
         <li>
           <a href="/">Promoções</a>
