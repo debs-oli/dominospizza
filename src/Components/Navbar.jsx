@@ -1,4 +1,6 @@
 export default function Navbar(props) {
+  const { toggleProducts, cart } = props;
+
   return (
     <nav>
       <h1>
@@ -16,7 +18,7 @@ export default function Navbar(props) {
             href="/"
             onClick={(event) => {
               event.preventDefault();
-              props.toggleProducts(false);
+              toggleProducts(false);
             }}
           >
             Ecomenda Online
@@ -27,7 +29,7 @@ export default function Navbar(props) {
             href="/"
             onClick={(event) => {
               event.preventDefault();
-              props.toggleProducts(true);
+              toggleProducts(true);
             }}
           >
             Menu
@@ -49,7 +51,7 @@ export default function Navbar(props) {
           <a href="/">Faz Login</a>
         </li>
         <li className="cart">
-          <a href="/">Carrinho</a>
+          <a href="/">Carrinho({cart.length})</a>
         </li>
       </ul>
     </nav>
